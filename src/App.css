@@ -13,43 +13,8 @@ input {
   display: flex;
   justify-content: space-around;
 }
-
-.users-container {
-  display: flex;
-  flex-direction: column;
-  border: 0.5px solid rgba(0, 0, 0, 0.377);
-  padding: 0.8rem;
-}
-.add-btn {
-  width: 40%;
-  align-self: center;
-  font-size: 0.7rem !important;
-}
-.users-container > input {
-  border: 0.5px solid rgba(0, 0, 0, 0.253);
-  border-radius: 0.3rem;
-  padding: 0.5rem;
-  margin: 3%;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: column;
-  color: ghostwhite;
-  background-color: black;
-  border-radius: 0.3rem;
-  padding: 0.8rem;
-  height: 50%;
-}
-.text-container > input {
-  background-color: black;
-  color: ghostwhite;
-  border: 0.5px solid ghostwhite;
-  padding: 0.3rem;
-  margin: 2%;
-}
-
-.click-count{
+/* Count Style  */
+.click-count {
   padding: 0.5rem;
   max-width: 30%;
 }
@@ -77,10 +42,50 @@ input {
   transition: 0.3s;
 }
 
-.contact-list-container{
+/* Text Change  */
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  color: ghostwhite;
+  background-color: black;
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  height: 50%;
+}
+.text-container > input {
+  background-color: black;
+  color: ghostwhite;
+  border: 0.5px solid ghostwhite;
+  padding: 0.3rem;
+  margin: 2%;
+}
+
+/* Add Contact */
+
+.users-container {
+  display: flex;
+  flex-direction: column;
+  border: 0.5px solid rgba(0, 0, 0, 0.377);
+  padding: 0.8rem;
+}
+.add-btn {
+  width: 40%;
+  align-self: center;
+  font-size: 0.7rem !important;
+}
+.users-container > input {
+  border: 0.5px solid rgba(0, 0, 0, 0.253);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin: 3%;
+}
+
+/* Contact List  */
+.contact-list-container {
   display: flex;
   flex-wrap: wrap;
 }
 .contact-list-container > * {
-  margin: 2% ;
+  margin: 2%;
 }

@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function RecipeReviewCard({user:{name , email}}) {
+ function RecipeReviewCard({user:{name , email}}) {
   const classes = useStyles();
   
 
@@ -81,3 +81,4 @@ export default function RecipeReviewCard({user:{name , email}}) {
     </Card>
   );
 }
+export default RecipeReviewCard

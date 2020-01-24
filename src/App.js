@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import Contact from "./components/contactCard";
-import { Button } from "@material-ui/core";
+import ClickCounter from './components/ClickCounter'
+import TextChange from './components/TextChange'
+import AddContact from "./components/AddContact"
+import ContactList from './components/ContactList'
 import "./App.css";
 
 function App() {
@@ -20,18 +22,19 @@ function App() {
     count: 0,
     text: "",
     user: { name: "", email: "" },
-    users: []
+    users: [ {name:"Karim" , email:"karim@gmail.com" } , {name:"malek" , email:"malek@gmail.com" }]
   });
 
   const handelCount = () => setState({ ...state, count: state.count + 1 });
   const handelReset = () => setState({ ...state, count: 0 });
   const handelText = e => setState({ ...state, text: e.target.value });
-  const saveUser = (e, key) =>
+  const handelChange = (e, key) =>
     setState({ ...state, user: { ...state.user, [key]: e.target.value } });
-  const handelAdd = () =>
-    setState({
+  const handelAdd = () => setState({
       ...state,
+      //Add Contact
       users: [...state.users, state.user],
+      //Reset Form
       user: { ...state.user, name: "", email: "" }
     });
 
@@ -39,62 +42,12 @@ function App() {
     <div className="App">
       <h1>React Hooks && @Material-ui</h1>
       <div className="container">
-        <div className="click-count">
-          <p className="number-click"> You Clicked {state.count.toString().length<2 ? `0${state.count}`:state.count } Times</p>
-          <button className="click-me-btn" onClick={handelCount}>
-            Click me
-          </button>
-          <button
-            style={{ display: "block", margin: "0.5rem" }}
-            className="click-me-btn"
-            onClick={handelReset}
-          >
-            Reset Count
-          </button>
-        </div>
-        <div className="text-container">
-          <p className="text-change">{state.text ? state.text : "Change Me"}</p>
-          <label>Live Text Change </label>
-          <input
-            type="text"
-            maxLength="19"
-            value={state.text}
-            onChange={handelText}
-          />
-        </div>
-        <div className="users-container">
-          <h2>Add User with React hooks</h2>
-          <label>User Name</label>
-          <input
-            type="text"
-            name="name"
-            value={state.user.name}
-            onChange={event => saveUser(event, event.target.name)}
-          />
-          <label>Email</label>
-          <input
-            type="text"
-            name="email"
-            value={state.user.email}
-            onChange={e => saveUser(e, e.target.name)}
-          />
-
-          <Button
-            className="add-btn"
-            onClick={handelAdd}
-            variant="contained"
-            color="primary"
-          >
-            Add Contact
-          </Button>
-        </div>
+      <ClickCounter state={state} handelCount={handelCount} handelReset={handelReset} />
+       <TextChange state={state} handelText={handelText} /> 
+       <AddContact state ={state} handelChange={handelChange} handelAdd={handelAdd} />
       </div>
-<div className="contact-list-container">
+      <ContactList state={state} /> 
 
-      {state.users.map((user, index) => (
-        <Contact key={index} user={user} />
-      ))}
-</div>
     </div>
   );
 }

@@ -1,38 +1,86 @@
+button {
+  outline: 0;
+}
+input {
+  outline: 0;
+}
+
 .App {
   text-align: center;
+  background-color: ghostwhite;
+}
+.container {
+  display: flex;
+  justify-content: space-around;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.users-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border: 0.5px solid rgba(0, 0, 0, 0.377);
+  padding: 0.8rem;
+}
+.add-btn {
+  width: 40%;
+  align-self: center;
+  font-size: 0.7rem !important;
+}
+.users-container > input {
+  border: 0.5px solid rgba(0, 0, 0, 0.253);
+  border-radius: 0.3rem;
+  padding: 0.5rem;
+  margin: 3%;
 }
 
-.App-link {
-  color: #61dafb;
+.text-container {
+  display: flex;
+  flex-direction: column;
+  color: ghostwhite;
+  background-color: black;
+  border-radius: 0.3rem;
+  padding: 0.8rem;
+  height: 50%;
+}
+.text-container > input {
+  background-color: black;
+  color: ghostwhite;
+  border: 0.5px solid ghostwhite;
+  padding: 0.3rem;
+  margin: 2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.click-count{
+  padding: 0.5rem;
+  max-width: 30%;
+}
+
+.number-click {
+  font-size: 1rem;
+  font-family: monospace;
+}
+
+.click-me-btn {
+  background: none;
+  border: 0.5px solid black;
+  border-radius: 0.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.click-me-btn:hover {
+  background-color: black;
+  color: ghostwhite;
+  border: 0.5px solid black;
+  transition: 0.3s;
+}
+
+.contact-list-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+.contact-list-container > * {
+  margin: 2% ;
 }
